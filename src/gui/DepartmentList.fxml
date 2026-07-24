@@ -9,15 +9,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="355.0" 
+<VBox prefHeight="355.0"
       prefWidth="499.0"
-      xmlns="http://javafx.com/javafx/26"
+      xmlns="http://javafx.com/javafx/17"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="gui.DepartamentListController">
+      fx:controller="gui.DepartmentListController">
 
     <children>
 
-        <Label text="Departament Registration">
+        <Label text="Department Registration">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font>
@@ -25,6 +25,7 @@
                 <Insets left="5.0" top="5.0" />
             </padding>
         </Label>
+
 
         <ToolBar prefHeight="40.0" prefWidth="200.0">
             <items>
@@ -37,7 +38,8 @@
             </items>
         </ToolBar>
 
-        <TableView fx:id="tableViewDepartament"
+
+        <TableView fx:id="tableViewDepartment"
                    prefHeight="200.0"
                    prefWidth="200.0">
 

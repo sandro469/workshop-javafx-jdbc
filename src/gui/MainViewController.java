@@ -16,7 +16,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
-import model.services.DepartamentService;
+import model.services.DepartmentService;
 
 public class MainViewController implements Initializable {
 
@@ -29,46 +29,74 @@ public class MainViewController implements Initializable {
     @FXML
     private MenuItem menuItemAbout;
 
+
     @FXML
     public void onMenuItemSellerAction() {
         System.out.println("onMenuItemSellerAction");
     }
 
+
     @FXML
     public void onMenuItemDepartmentAction() {
-        loadView("/gui/DepartamentList.fxml" , (DepartamentListController controller)  ->  {
-        	   controller.setDepartamentService(new  DepartamentService());
-        	   controller.updateTableView();
-        });
+
+        loadView("/gui/DepartmentList.fxml",
+                (DepartmentListController controller) -> {
+
+                    controller.setDepartmentService(new DepartmentService());
+                    controller.updateTableView();
+
+                });
     }
+
 
     @FXML
     public void onMenuItemAboutAction() {
-        loadView("/gui/About.fxml" ,  x ->  { });
+
+        loadView("/gui/About.fxml", x -> { });
+
     }
+
 
     @Override
     public void initialize(URL uri, ResourceBundle rb) {
 
     }
 
-    private synchronized  <T>void loadView(String absoluteName, Consumer<T>  initializingAction) {
+
+    private synchronized <T> void loadView(String absoluteName, Consumer<T> initializingAction) {
 
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
+            URL resource = getClass().getResource(absoluteName);
+
+            if (resource == null) {
+                throw new IllegalStateException(
+                        "Arquivo FXML não encontrado: " + absoluteName);
+            }
+
+            FXMLLoader loader = new FXMLLoader(resource);
+
             VBox newVBox = loader.load();
-            
+
+
             Scene mainScene = Main.getmainScene();
+
             VBox mainVBox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent();
 
+
             Node mainMenu = mainVBox.getChildren().get(0);
+
             mainVBox.getChildren().clear();
+
             mainVBox.getChildren().add(mainMenu);
+
             mainVBox.getChildren().addAll(newVBox.getChildren());
-            
-           T controller  =  loader.getController();
-           initializingAction.accept(controller);
+
+
+            T controller = loader.getController();
+
+            initializingAction.accept(controller);
+
 
         } catch (IOException e) {
 

@@ -30,7 +30,7 @@ public class Main extends Application {
 		}
 	}
 
-	  @SuppressWarnings("exports")
+	 
 	public static Scene getmainScene() {
 		  return mainScene;
 	  }
