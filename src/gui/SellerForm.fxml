@@ -12,77 +12,45 @@
 <AnchorPane prefHeight="169.0" prefWidth="627.0"
             xmlns="http://javafx.com/javafx/26"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="gui.DepartmentFormController">
+            fx:controller="gui.SellerFormController">
 
    <children>
-
-      <GridPane layoutX="44.0"
-                layoutY="35.0"
+      <GridPane layoutX="44.0" layoutY="35.0"
                 prefHeight="98.0"
                 prefWidth="524.0"
                 AnchorPane.leftAnchor="20.0"
                 AnchorPane.topAnchor="20.0">
 
         <columnConstraints>
-
-          <ColumnConstraints hgrow="SOMETIMES"
-                              maxWidth="169.0"
-                              minWidth="10.0"
-                              prefWidth="81.0" />
-
-          <ColumnConstraints hgrow="SOMETIMES"
-                              maxWidth="270.0"
-                              minWidth="10.0"
-                              prefWidth="221.0" />
-
-          <ColumnConstraints hgrow="SOMETIMES"
-                              maxWidth="195.0"
-                              minWidth="10.0"
-                              prefWidth="185.0" />
-
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="81.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="221.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="185.0" />
         </columnConstraints>
 
-
         <rowConstraints>
-
-          <RowConstraints minHeight="10.0"
-                          prefHeight="30.0"
-                          vgrow="SOMETIMES" />
-
-          <RowConstraints minHeight="10.0"
-                          prefHeight="30.0"
-                          vgrow="SOMETIMES" />
-
-          <RowConstraints minHeight="10.0"
-                          prefHeight="30.0"
-                          vgrow="SOMETIMES" />
-
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-
 
          <children>
 
             <Label text="Id" />
 
-            <Label text="Name"
-                   GridPane.rowIndex="1" />
-
+            <Label text="Name" GridPane.rowIndex="1" />
 
             <TextField fx:id="txtId"
                        editable="false"
                        GridPane.columnIndex="1" />
 
-
             <TextField fx:id="txtName"
                        GridPane.columnIndex="1"
                        GridPane.rowIndex="1" />
-
 
             <Label fx:id="labelErrorName"
                    textFill="#e10707"
                    GridPane.columnIndex="2"
                    GridPane.rowIndex="1" />
-
 
             <HBox prefHeight="100.0"
                   prefWidth="200.0"
@@ -105,7 +73,6 @@
                </children>
 
             </HBox>
-
 
          </children>
 
